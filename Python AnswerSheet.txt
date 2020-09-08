@@ -1,0 +1,181 @@
+Q1 to Q8 have only one correct answer. Choose the correct option to answer your question.
+	Que:1. Which of the following is not a core datatype in python?
+        Answer:B) struct
+	Que:2. Which of the following is an invalid variable name in python?
+	Answer:C) 1_no
+	Que:3. Which one of the following is a keyword in python?
+	Answer:A) in
+	Que:4. In which of the following manner are the operators of the same precedence executed in python?
+	Answer:A) Left to Right
+	Que:5. Arrange the following in decreasing order of the precedence when they appear in an expression in python?
+	Answer:C) iv – iii – ii – i
+	Que:6. (28//6)**3/3%3 = ?
+	Answer:C) 0.3333…
+	Que:7. Which of the following is not equal to x16 ?
+	Answer:C) x^16
+	Que:8. a = input(“Enter an integer”). What will be the data type of a?
+	Answer:B) str
+
+Q9 and Q10 have multiple correct answers. Choose all the correct options to answer your question.
+	Que:9. Which of the following statements are correct?
+	Answer:A) Division and multiplication have same precedence in python
+	       B) Python’s operators’ precedence is based on PEDMAS
+	       D) In case of operators’ having same precedence, the one on the left side is executed first
+	Que:10. Which of the following is(are) valid statement(s) in python?
+	Answer:A) abc = 1,000,000
+	       C) a,b,c = 1000, 2000, 3000
+	       D) a_b_c = 1,000,000
+
+Q11 to Q13 are subjective questions, answer them briefly
+	Que:11. Differentiate between a list, tuple, set and dictionary
+	Answer:
+	
+	List: A list is a data structure in Python that is a mutable, or changeable, ordered sequence of elements.
+	Lists are just like dynamic sized arrays.A single list may contain DataTypes like Integers, Strings, as well as Objects. 
+	Lists are mutable, and hence, they can be altered even after their creation.
+	The list is a datatype available in Python which can be written as a list of comma-separated values (items) between square brackets.
+	List are mutable .i.e it can be converted into another datatype and can store any data element in it.
+	List can store any type of element.
+
+# Python program to explain 
+# List 
+	
+# Creating a List 
+List = [] 
+print("Blank List: ") 
+print(List) 
+	
+# Creating a List of numbers 
+List = [10, 20, 14] 
+print("\nList of numbers: ") 
+print(List) 
+	
+# Creating a List of strings and accessing 
+# using index 
+List = ["Geeks", "For", "Geeks"] 
+print("\nList Items: ") 
+print(List[0]) 
+print(List[2])
+
+	Tuple:Tuple is a collection of Python objects much like a list. The sequence of values stored in a tuple can be of any type, 
+	and they are indexed by integers. Values of a tuple are syntactically separated by ‘commas’. Although it is not necessary, 
+	it is more common to define a tuple by closing the sequence of values in parentheses.
+	Tuple is a immutable sequence in python.
+	It cannot be changed or replaced since it is immutable.
+	It is defined under parenthesis().
+	Tuples can store any type of element.
+# Creating an empty Tuple 
+Tuple1 = () 
+print("Initial empty Tuple: ") 
+print (Tuple1) 
+	
+# Creating a Tuple with 
+# the use of list 
+list1 = [1, 2, 4, 5, 6] 
+print("\nTuple using List: ") 
+print(tuple(list1)) 
+	
+#Creating a Tuple 
+#with the use of built-in function 
+Tuple1 = tuple('Geeks') 
+print("\nTuple with the use of function: ") 
+print(Tuple1)
+
+	Set:Set is an unordered collection of data type that is iterable, mutable and has no duplicate elements. 
+	The major advantage of using a set, as opposed to a list, is that it has a highly optimized method for checking whether a specific element is contained in the set. 
+	Sets are unoreder collection of elements or unintended collection of items In python.
+	Here the order in which the elements are added into the set is not fixed, it can change frequently.
+	It is defined under curly braces{}
+	Sets are immutable.i.e it cannot be changed or replaced.
+# Python program to demonstrate 
+# Set in Python 
+	
+# Creating a Set 
+set1 = set() 
+print("Intial blank Set: ") 
+print(set1) 
+	
+# Creating a Set with 
+# the use of Constructor 
+# (Using object to Store String) 
+String = 'GeeksForGeeks'
+set1 = set(String) 
+print("\nSet with the use of an Object: " ) 
+print(set1) 
+	
+# Creating a Set with 
+# the use of a List 
+set1 = set(["Geeks", "For", "Geeks"]) 
+print("\nSet with the use of List: ") 
+print(set1)
+
+	Dictionary: Dictionary is an unordered collection of data values, used to store data values like a map, which unlike 
+	other Data Types that hold only single value as an element, Dictionary holds key:value pair. 
+	Key value is provided in the dictionary to make it more optimized.
+	A Dictionary can be created by placing sequence of elements within curly {} braces, separated by ‘comma’.
+	Dictionary holds a pair of values, one being the Key and the other corresponding pair element being its Key:value.
+	Values in a dictionary can be of any datatype and can be duplicated, whereas keys can’t be repeated and must be immutable.
+	Dictionary keys are case sensitive, same name but different cases of Key will be treated distinctly.
+# Creating a Dictionary 
+# with Integer Keys 
+Dict = {1: 'Geeks', 2: 'For', 3: 'Geeks'} 
+print("\nDictionary with the use of Integer Keys: ") 
+print(Dict) 
+
+# Creating a Dictionary 
+# with Mixed keys 
+Dict = {'Name': 'Geeks', 1: [1, 2, 3, 4]} 
+print("\nDictionary with the use of Mixed Keys: ") 
+print(Dict) 
+
+	Que:12. Are strings mutable in python? Suppose you have a string “I+Love+Python”, write a small code to replace ‘+’
+	with space in python.
+	Answer:The string data types are immutable. Which means a string value cannot be updated.
+	#Suppose a string 'I+Love+Python'which store in var. 
+	var = 'I+Love+Python'
+	var.replace('+',' ')
+
+	Que:13. What does the function ord() do in python? Explain with example. Also, write down the function for getting
+	the datatype of a variable in python 
+	Answer:The ord() function returns the number representing the unicode code of a specified character.
+ 	If the string length is more then one, and a TypeError will be raised.
+
+# inbuilt function return an 
+# integer representing the Unicode code 
+value = ord("A") 
+
+# writing in ' ' gives the same result 
+value1 = ord('A') 
+
+# prints the unicode value 
+print value, value1 
+
+
+	We use the type() function to find the type of any variable in python.
+	For Example-
+			var=19
+		        type(var)
+		Output:int
+	
+Q14 and Q15 are programming questions. Answer them in Jupyter Notebook File as 'Solution.ipynb'
+	Que:14. Write a python program to solve a quadratic equation of the form 𝑎𝑥2 + 𝑏𝑥 + 𝑐 = 0. Where a, b and c are to
+	be taken by user input. Handle the erroneous input, such as ‘a’ should not be equal to 0.
+	Answer:See the solution file name as'Solution.ipynb'.
+	Que:15. Write a python program to find the sum of first ‘n’ natural numbers without using any loop. Ask user to input
+	the value of ‘n’.
+	Answer:See the solution file name as'Solution.ipynb'.	
+
+
+
+
+	
+	
+
+
+
+
+
+	
+	
+
+
