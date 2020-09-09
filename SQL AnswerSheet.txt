@@ -1,0 +1,89 @@
+Q1 and Q2 have one or more correct answer. Choose all the correct option to answer your question.
+	Que:1. Which of the following is/are DDL commands in SQL?
+	Answer:A) Create
+	       D) ALTER
+	Que:2. Which of the following is/are DML commands in SQL?
+	Answer:A) Update
+	       B) Delete
+
+Q3 to Q10 have only one correct answer. Choose the correct option to answer your question.
+	Que:3. Full form of SQL is:
+	Answer:B) Structured Query Language
+	Que:4. Full form of DDL is:
+	Answer:B) Data Definition Language
+	Que:5. DML is:
+	Answer:A) Data Manipulation Language
+	Que:6. Which of the following statements can be used to create a table with column B int type and C float type? 
+	Answer:C) Create Table A (B int,C float) 
+	Que:7. Which of the following statements can be used to add a column D (float type) to the table A created above?
+	Answer:B) Alter Table A ADD COLUMN D float
+	Que:8. Which of the following statements can be used to drop the column added in the above question?
+	Answer:B) Alter Table A Drop Column D
+	Que:9. Which of the following statements can be used to change the data type (from float to int ) of the column D of
+	table A created in above questions?
+	Answer:B) Alter Table A Alter Column D int
+	Que:10. Suppose we want to make Column B of Table A as primary key of the table. By which of the following
+statements we can do it?
+	Answer:C) Alter Table A Add Primary key B
+
+Q11 to Q15 are subjective answer type questions, Answer them briefly.
+	Que:11. What is data-warehouse?
+	Answer: Data-warehouse:  Data warehouse is a relational database that is designed for query and analysis rather than for transaction processing. 
+	It usually contains historical data derived from transaction data, but it can include data from other sources. 
+	It separates analysis workload from transaction workload and enables an organization to consolidate data from several sources.
+	A Data Warehouse is separate from DBMS, it stores huge amount of data, which is typically collected from multiple heterogeneous source like files, DBMS, etc.
+	The goal is to produce statistical results that may help in decision makings.
+	For example, a college might want to see quick different results, like how is the placement of CS students has improved over last 10 years, in terms of salaries, counts, etc.
+	Need of Data Warehouse:
+	An ordinary Database can store MBs to GBs of data and that too for a specific purpose. For storing data of TB size, the storage shifted to Data Warehouse. 
+	Besides this, a transactional database doesn’t offer itself to analytics. To effectively perform analytics, 
+	an organization keeps a central Data Warehouse to closely study its business by organizing, understanding and using its historic data for taking strategic decisions and analyzing trends.
+	Example Applications of Data Warehousing:
+	Data Warehousing can be applicable anywhere where we have huge amount of data and we want to see statistical results that help in decision making.
+
+	Que:12. What is the difference between OLTP VS OLAP?
+	Answer:OLTP and OLAP: The two terms look similar but refer to different kinds of systems. Online transaction processing (OLTP) captures, stores, and processes data from transactions in real time. 
+	Online analytical processing (OLAP) uses complex queries to analyze aggregated historical data from OLTP systems.
+	OLTP:
+	An OLTP system captures and maintains transaction data in a database. Each transaction involves individual database records made up of multiple fields or columns.
+	Examples include banking and credit card activity or retail checkout scanning.
+	In OLTP, the emphasis is on fast processing, because OLTP databases are read, written, and updated frequently. 
+	If a transaction fails, built-in system logic ensures data integrity.
+	OLAP:
+	OLAP applies complex queries to large amounts of historical data, aggregated from OLTP databases and other sources, 
+	for data mining, analytics, and business intelligence projects. In OLAP, the emphasis is on response time to these complex queries. 
+	Each query involves one or more columns of data aggregated from many rows. 
+	Examples include year-over-year financial performance or marketing lead generation trends.
+	OLAP databases and data warehouses give analysts and decision-makers the ability to use custom reporting tools to turn data into information. 
+	Query failure in OLAP does not interrupt or delay transaction processing for customers, but it can delay or impact the accuracy of business intelligence insights.
+
+	Que:13. What are the various characteristics of data-warehouse?
+	Answer:The various characteristics of data-warehouse:
+			--> Some data is denormalized for simplification and to improve performance.
+
+			--> Large amounts of historical data are used.
+
+			--> Queries often retrieve large amounts of data.
+
+			--> Both planned and ad hoc queries are common.
+
+			--> The data load is controlled.
+	
+	Que:14. What is Star-Schema?
+	Answer: In data warehousing and business intelligence (BI), a star schema is the simplest form of a dimensional model, in which data is organized into facts and dimensions. 
+		A fact is an event that is counted or measured, such as a sale or login.  A dimension contains reference information about the fact, such as date, product, or customer. 
+		A star schema is diagramed by surrounding each fact with its associated dimensions. The resulting diagram resembles a star. 
+		Star schemas are optimized for querying large data sets and are used in data warehouses and data marts to support OLAP cubes, 
+		business intelligence and analytic applications, and ad hoc queries. 
+
+	Que:15. What do you mean by SETL?
+	Answer: SETL: SETL(SET Language) is a very high-level programming language based on the mathematical theory of sets.
+	SETL provides two basic aggregate data types: unordered sets, and sequences (the latter also called tuples).
+	The elements of sets and tuples can be of any arbitrary type, including sets and tuples themselves.
+	Maps are provided as sets of pairs (i.e., tuples of length 2) and can have arbitrary domain and range types.
+	Primitive operations in SETL include set membership, union, intersection, and power set construction, among others.
+	SETL provides quantified boolean expressions constructed using the universal and existential quantifiers of first-order predicate logic.
+	SETL provides several iterators to produce a variety of loops over aggregate data structures.		
+
+
+	
