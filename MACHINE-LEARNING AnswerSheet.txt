@@ -1,0 +1,132 @@
+In Q1 to Q7, only one option is correct, Choose the correct option:
+	Que:1. The value of correlation coefficient will always be:
+	Answer:C) between -1 and 1
+	Que:2. Which of the following cannot be used for dimensionality reduction?
+	Answer:B) PCA
+	Que:3. Which of the following is not a kernel in Support Vector Machines?
+	Answer:B) Radial Basis Function
+	Que:4. Amongst the following, which one is least suitable for a dataset having non-linear decision boundaries?
+	Answer:D) Support Vector Classifier
+	Que:5. In a Linear Regression problem, ‘X’ is independent variable and ‘Y’ is dependent variable, where ‘X’ represents
+	weight in pounds. If you convert the unit of ‘X’ to kilograms, then new coefficient of ‘X’ will be?
+	Answer:B) same as old coefficient of ‘X’
+	Que:6. As we increase the number of estimators in ADABOOST Classifier, what happens to the accuracy of the model?
+	Answer:B) increases
+	Que:7. Which of the following is not an advantage of using random forest instead of decision trees?
+	Answer:B) Random Forests explains more variance in data then decision trees 
+
+In Q8 to Q10, more than one options are correct, Choose all the correct options:
+	Que:8. Which of the following are correct about Principal Components?
+	Answer:D) All of the above
+	Que:9. Which of the following are applications of clustering?
+	Answer:A) Identifying developed, developing and under-developed countries on the basis of factors like GDP, poverty
+	index, employment rate, population and living index
+	C) Identifying spam or ham emails
+	Que:10. Which of the following is(are) hyper parameters of a decision tree?
+	Answer: A) max_depth B) max_features
+	        D) min_samples_leaf
+
+Q11 to Q15 are subjective answer type questions, Answer them briefly.
+	Que:11. What are outliers? Explain the Inter Quartile Range(IQR) method for outlier detection.
+	Answer:	Outliers are data points that are far from other data points. In other words, they're unusual values in a dataset. 
+		Outliers are problematic for many statistical analyses because they can cause tests to either miss significant findings or distort real results.
+		In other words, an outlier is an observation that diverges from an overall pattern on a sample.
+		Outliers can be of two kinds: univariate and multivariate. 
+		Univariate outliers can be found when looking at a distribution of values in a single feature space.
+		Multivariate outliers can be found in a n-dimensional space (of n-features).
+
+		Inter Quartile Range(IQR) is used to measure variability by dividing a data set into quartiles. 
+		The data is sorted in ascending order and split into 4 equal parts.
+		 Q1, Q2, Q3 called first, second and third quartiles are the values which separate the 4 equal parts.
+		 Q1 represents the 25th percentile of the data.
+		 Q2 represents the 50th percentile of the data.
+		 Q3 represents the 75th percentile of the data.	
+	If a dataset has 2n / 2n+1 data points, then
+		Q1 = median of the dataset.
+		Q2 = median of n smallest data points.
+		Q3 = median of n highest data points.
+
+	IQR is the range between the first and the third quartiles namely Q1 and Q3: IQR = Q3 – Q1. 
+	The data points which fall below Q1 – 1.5 IQR or above Q3 + 1.5 IQR are outliers.
+
+	Que:12. What is the primary difference between bagging and boosting algorithms?
+	Answer:	Bagging is a way to decrease the variance in the prediction by generating additional data for training from dataset using combinations with repetitions to produce multi-sets of the original data. 
+		Bagging Steps:
+		->Suppose there are N observations and M features in training data set. A sample from training data set is taken randomly with replacement.
+		->A subset of M features are selected randomly and whichever feature gives the best split is used to split the node iteratively.
+		->The tree is grown to the largest.
+		->Above steps are repeated n times and prediction is given based on the aggregation of predictions from n number of trees.
+		Advantages of Bagging:
+			->Reduces over-fitting of the model.
+			->Handles higher dimensionality data very well.
+			->Maintains accuracy for missing data.	
+		Disadvantages of Bagging:
+			->Since final prediction is based on the mean predictions from subset trees, it won’t give precise values for the classification and regression model.		
+
+		Boosting is an iterative technique which adjusts the weight of an observation based on the last classification.
+		Boosting is used to create a collection of predictors. 
+		In this technique, learners are learned sequentially with early learners fitting simple models to the data and then analysing data for errors. 
+		Consecutive trees (random sample) are fit and at every step, the goal is to improve the accuracy from the prior tree. When an input is misclassified by a hypothesis, 
+		its weight is increased so that next hypothesis is more likely to classify it correctly. This process converts weak learners into better performing model.
+		Boosting Steps:
+		->Draw a random subset of training samples d1 without replacement from the training set D to train a weak learner C1
+		->Draw second random training subset d2 without replacement from the training set and add 50 percent of the samples that were previously falsely classified/misclassified to train a weak learner C2
+		->Find the training samples d3 in the training set D on which C1 and C2 disagree to train a third weak learner C3
+		->Combine all the weak learners via majority voting.
+		Advantages of Booting:
+			->Supports different loss function (we have used ‘binary:logistic’ for this example).
+			->Works well with interactions.
+		Disadvantages of Booting:
+			->Prone to over-fitting.
+			->Requires careful tuning of different hyper-parameters.
+	
+	Que:13. What is adjusted R2 in logistic regression. How is it calculated?
+	Answer:Adjusted R-Squared:It measures the proportion of variation explained by only those independent variables that really help in explaining the dependent variable. 
+	It penalizes you for adding independent variable that do not help in predicting the dependent variable.
+	Adjusted R-Squared can be calculated mathematically in terms of sum of squares. 
+	The only difference between R-square and Adjusted R-square equation is degree of freedom.
+	Adjusted R-squared value can be calculated based on value of r-squared, number of independent variables (predictors), total sample size.
+
+	Difference between R-square and Adjusted R-square:
+		->Every time you add a independent variable to a model, the R-squared increases, even if the independent variable is insignificant.
+		It never declines. Whereas Adjusted R-squared increases only when independent variable is significant and affects dependent variable. 
+		->Adjusted r-squared can be negative when r-squared is close to zero.
+		->Adjusted r-squared value always be less than or equal to r-squared value.
+
+#In Python Calculate Adjusted R-Squared and R-Squared
+import numpy as np
+y = np.array([21, 21, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2])
+yhat = np.array([21.5, 21.14, 26.1, 20.2, 17.5, 19.7, 14.9, 22.5, 25.1, 18])
+R2 = 1 - np.sum((yhat - y)**2) / np.sum((y - np.mean(y))**2)
+R2
+n=y.shape[0]
+p=3
+adj_rsquared = 1 - (1 - R2) * ((n - 1)/(n-p-1))
+adj_rsquared
+
+	Que:14. What is the difference between standardisation and normalisation?
+	Answer:The terms normalization and standardization are sometimes used interchangeably, but they usually refer to different things. 
+	      Normalization usually means to scale a variable to have a values between 0 and 1, while standardization transforms data to have a mean of zero and a standard deviation of 1.
+
+	Que:15. What is cross-validation? Describe one advantage and one disadvantage of using cross-validation.
+	Answer:Cross Validation in Machine Learning is a great technique to deal with overfitting problem in various algorithms.
+	Instead of training our model on one training dataset, we train our model on many datasets. 
+Advantages of Cross Validation:
+
+1. Reduces Overfitting: In Cross Validation, we split the dataset into multiple folds and train the algorithm on different folds. This prevents our model from overfitting the training dataset. 
+So, in this way, the model attains the generalization capabilities which is a good sign of a robust algorithm.
+
+Note: Chances of overfitting are less if the dataset is large. So, Cross Validation may not be required at all in the situation where we have sufficient data available.
+
+2. Hyperparameter Tuning: Cross Validation helps in finding the optimal value of hyperparameters to increase the efficiency of the algorithm.
+
+Disadvantages of Cross Validation:
+
+1. Increases Training Time: Cross Validation drastically increases the training time. Earlier you had to train your model only on one training set, 
+but with Cross Validation you have to train your model on multiple training sets. 
+
+For example, if you go with 5 Fold Cross Validation, you need to do 5 rounds of training each on different 4/5 of available data. And this is for only one choice of hyperparameters. 
+If you have multiple choice of parameters, then the training period will shoot too high.
+
+2. Needs Expensive Computation: Cross Validation is computationally very expensive in terms of processing power required.
+	
